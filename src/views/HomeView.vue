@@ -1,44 +1,55 @@
+<script setup>
+
+</script>
 <template>
-  <main class="home">
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="gradient-text">
+  <main class="pt-20 text-white">
+    <!-- Hero Section -->
+    <section class="min-h-[70vh] flex items-center px-8 py-16 m-4 rounded-2xl bg-cover bg-center"
+             style="background-image: url('/src/assets/office.jpeg')">
+      <div class="max-w-[700px] bg-black/55 backdrop-blur-lg p-12 rounded-2xl">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-amber-500 bg-clip-text text-transparent">
           Building Digital<br />Solutions That Matter
         </h1>
 
-        <p class="hero-text">
+        <p class="mt-4 leading-relaxed opacity-90">
           Codec is focused on innovation, technology, and empowering
           communities through modern digital solutions.
         </p>
 
-        <div class="hero-actions">
-          <router-link to="/services" class="btn outline">
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <router-link
+              to="/services"
+              class="px-6 py-3 rounded-lg font-semibold border border-white/60 hover:bg-white/20 transition-all inline-flex items-center gap-2">
             <i class="fas fa-laptop-code"></i>
             Our Services
           </router-link>
 
-          <router-link to="/contact" class="btn blur">
+          <router-link
+              to="/contact"
+              class="px-6 py-3 rounded-lg font-semibold bg-white/25 backdrop-blur-xl hover:bg-white/35 transition-all">
             Get Started
           </router-link>
         </div>
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container">
-        <div class="card">
-          <i class="fas fa-bullseye section-icon"></i>
-          <h2 class="section-title">Our Mission</h2>
-          <p class="section-text">
+    <!-- Mission & Vision Section -->
+    <section class="py-20 px-8 rounded-2xl m-4 bg-gradient-to-r from-blue-400 to-blue-800">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl mt-8 hover:-translate-y-1 transition-transform">
+          <i class="fas fa-bullseye text-4xl mb-4 text-blue-400"></i>
+          <h2 class="text-4xl font-bold mb-4">Our Mission</h2>
+          <p class="max-w-[700px] opacity-90">
             We bridge the gap between technology and real-world impact
             by building scalable, secure, and accessible systems.
           </p>
         </div>
 
-        <div class="card">
-          <i class="fas fa-bullseye section-icon"></i>
-          <h2 class="section-title">Our Vission</h2>
-          <p class="section-text">Our vision is to build a future where the boundary between complex technology and
+        <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl mt-8 hover:-translate-y-1 transition-transform">
+          <i class="fas fa-eye text-4xl mb-4 text-blue-400"></i>
+          <h2 class="text-4xl font-bold mb-4">Our Vision</h2>
+          <p class="max-w-[700px] opacity-90">
+            Our vision is to build a future where the boundary between complex technology and
             meaningful human progress completely disappears. We aspire to be the primary architect of a world where
             every digital interaction is inherently secure, every innovation is globally scalable, and high-impact tools
             are accessible to everyone. By creating a standard of excellence in system integrity and inclusive design,
@@ -51,189 +62,49 @@
       </div>
     </section>
 
+    <!-- What We Do Section -->
+    <section class="py-20 px-8 rounded-2xl m-4 bg-gradient-to-br from-gray-900 to-gray-800">
+      <div class="max-w-[1100px] mx-auto">
+        <h2 class="text-4xl font-bold mb-4 text-center">What We Do</h2>
 
-    <section class="section light">
-      <div class="container">
-        <h2 class="section-title center">What We Do</h2>
-
-        <div class="cards">
-          <div class="card">
-            <i class="fas fa-code card-icon"></i>
-            <h3>Web Development</h3>
-            <p>Fast, scalable and modern web applications.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl hover:-translate-y-1 transition-transform">
+            <i class="fas fa-code text-3xl mb-4 text-white"></i>
+            <h3 class="text-2xl font-bold mb-2">Web Development</h3>
+            <p class="opacity-90">Fast, scalable and modern web applications.</p>
           </div>
 
-          <div class="card">
-            <i class="fas fa-shield-halved card-icon"></i>
-            <h3>Cybersecurity</h3>
-            <p>Security-first systems and digital awareness.</p>
+          <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl hover:-translate-y-1 transition-transform">
+            <i class="fas fa-shield-halved text-3xl mb-4 text-white"></i>
+            <h3 class="text-2xl font-bold mb-2">Cybersecurity</h3>
+            <p class="opacity-90">Security-first systems and digital awareness.</p>
           </div>
 
-          <div class="card">
-            <i class="fas fa-graduation-cap card-icon"></i>
-            <h3>Tech Training</h3>
-            <p>Practical skills for the modern digital economy.</p>
+          <div class="bg-white/10 backdrop-blur-lg p-10 rounded-2xl hover:-translate-y-1 transition-transform">
+            <i class="fas fa-graduation-cap text-3xl mb-4 text-white"></i>
+            <h3 class="text-2xl font-bold mb-2">Tech Training</h3>
+            <p class="opacity-90">Practical skills for the modern digital economy.</p>
           </div>
         </div>
       </div>
     </section>
 
-
-    <section class="section dark center">
-      <h2 class="section-title">
-        Let’s Build Something Impactful
+    <!-- CTA Section -->
+    <section class="py-20 px-8 rounded-2xl m-4 bg-gradient-to-r from-blue-400 to-blue-800 text-center">
+      <h2 class="text-4xl font-bold mb-8">
+        Let's Build Something Impactful
       </h2>
-      <router-link to="/contact" class="btn blur large">
+      <router-link
+          to="/contact"
+          class="px-9 py-4 rounded-lg font-semibold bg-white/25 backdrop-blur-xl hover:bg-white/35 transition-all inline-block">
         Contact Us
       </router-link>
     </section>
-
   </main>
 </template>
 
-<script setup>
-</script>
+
 
 <style scoped>
-.home {
-  padding-top: 80px;
-  color: #fff;
-}
-
-
-.hero {
-  min-height: 70vh;
-  background: url(../assets/office.jpeg) center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
-  margin: 1rem;
-  border-radius: 1rem;
-}
-
-.hero-content {
-  max-width: 700px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  padding: 3rem;
-  border-radius: 1rem;
-}
-
-.hero-text {
-  margin-top: 1rem;
-  line-height: 1.7;
-  opacity: 0.9;
-}
-
-.hero-actions {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-
-.section {
-  padding: 5rem 2rem;
-  border-radius: 1rem;
-  margin: 1rem;
-}
-
-.section.dark {
-  background: linear-gradient(90deg, #60a5fa, rgb(27, 27, 146));
-}
-
-.section.light {
-  background: linear-gradient(120deg, #111827, #1f2933);
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-
-.section-title {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.section-text {
-  max-width: 700px;
-  opacity: 0.9;
-}
-
-.center {
-  text-align: center;
-}
-
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem;
-  border-radius: 1.2rem;
-  transition: transform 0.3s ease;
-  margin-top: 2rem;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.section-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #60a5fa;
-}
-
-
-.btn {
-  padding: 0.7rem 1.6rem;
-  border-radius: 0.6rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.btn.outline {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.btn.outline:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.btn.blur {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(14px);
-}
-
-.btn.large {
-  padding: 0.9rem 2.3rem;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #60a5fa, #f59e0b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* Any custom styles that Tailwind can't handle */
 </style>

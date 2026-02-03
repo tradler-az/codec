@@ -1,36 +1,3 @@
-<template>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <div class="logo">
-        <span class="logo-text">Codec</span>
-      </div>
-
-      <button
-        class="navbar-toggle"
-        :class="{ 'is-active': isMobileMenuOpen }"
-        @click="toggleMobileMenu"
-        aria-label="Toggle navigation"
-      >
-        <span class="hamburger"></span>
-      </button>
-    </div>
-
-    <div class="navbar-menu" :class="{ 'is-active': isMobileMenuOpen }">
-      <div class="navbar-start">
-        <router-link to="/" class="navbar-item outline" @click="closeMobileMenu">Home</router-link>
-        <router-link to="/about" class="navbar-item outline" @click="closeMobileMenu">About</router-link>
-        <router-link to="/services" class="navbar-item outline" @click="closeMobileMenu">Services</router-link>
-        <router-link to="/contact" class="navbar-item outline" @click="closeMobileMenu">Contact</router-link>
-        </div>
-
-      <div class="navbar-end">
-        <router-link to="/login" class="btn outline" @click="closeMobileMenu">Log in</router-link>
-        <router-link to="/signup" class="btn blur" @click="closeMobileMenu">Sign up</router-link>
-      </div>
-    </div>
-  </nav>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 
@@ -45,155 +12,156 @@ const closeMobileMenu = () => {
 }
 </script>
 
+<template>
+  <nav class="fixed top-0 left-0 w-full z-[1000] bg-white/95 backdrop-blur-md border-b border-[#00A659]/20 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18">
+
+        <!-- Logo -->
+        <router-link to="/" class="flex items-center gap-4 group">
+          <div class="relative">
+            <img
+                src="../assets/optival-logo.png"
+                alt="OptivalFM Logo"
+                class="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="hidden lg:block h-14 w-px bg-[#00A659]/30"></div>
+          </router-link>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-1">
+          <router-link
+              to="/"
+              class="relative px-5 py-2.5 text-[#2E2E2E] font-medium hover:text-[#00A659] transition-colors group"
+              @click="closeMobileMenu">
+            <span class="relative z-10">Home</span>
+            <div class="absolute inset-0 bg-[#00A659]/0 group-hover:bg-[#00A659]/10 rounded-lg transition-all duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-0.5 bg-[#00A659] transition-all duration-300"></div>
+          </router-link>
+
+          <router-link
+              to="/about"
+              class="relative px-5 py-2.5 text-[#2E2E2E] font-medium hover:text-[#00A659] transition-colors group"
+              @click="closeMobileMenu">
+            <span class="relative z-10">About</span>
+            <div class="absolute inset-0 bg-[#00A659]/0 group-hover:bg-[#00A659]/10 rounded-lg transition-all duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-0.5 bg-[#00A659] transition-all duration-300"></div>
+          </router-link>
+
+          <router-link
+              to="/services"
+              class="relative px-5 py-2.5 text-[#2E2E2E] font-medium hover:text-[#00A659] transition-colors group"
+              @click="closeMobileMenu">
+            <span class="relative z-10">Services</span>
+            <div class="absolute inset-0 bg-[#00A659]/0 group-hover:bg-[#00A659]/10 rounded-lg transition-all duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-0.5 bg-[#00A659] transition-all duration-300"></div>
+          </router-link>
+
+          <router-link
+              to="/contact"
+              class="relative px-5 py-2.5 text-[#2E2E2E] font-medium hover:text-[#00A659] transition-colors group"
+              @click="closeMobileMenu">
+            <span class="relative z-10">Contact</span>
+            <div class="absolute inset-0 bg-[#00A659]/0 group-hover:bg-[#00A659]/10 rounded-lg transition-all duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-0.5 bg-[#00A659] transition-all duration-300"></div>
+          </router-link>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+          <router-link
+              to="/login"
+              class="px-5 py-2.5 text-[#2E2E2E] font-semibold hover:text-[#00A659] transition-colors"
+              @click="closeMobileMenu">
+            Log in
+          </router-link>
+
+          <router-link
+              to="/signup"
+              class="relative px-6 py-2.5 font-semibold text-white bg-gradient-to-r from-[#00A659] to-[#00837B] rounded-lg overflow-hidden group shadow-lg shadow-[#00A659]/20 hover:shadow-xl hover:shadow-[#00A659]/30 transition-all duration-300"
+              @click="closeMobileMenu">
+            <span class="relative z-10">Get Started</span>
+            <div class="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300"></div>
+          </router-link>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="md:hidden relative w-10 h-10 flex items-center justify-center"
+            @click="toggleMobileMenu"
+            aria-label="Toggle menu">
+          <div class="w-6 h-5 flex flex-col justify-between">
+            <span
+                class="w-full h-0.5 bg-[#00A659] rounded-full transition-all duration-300 origin-left"
+                :class="isMobileMenuOpen ? 'rotate-45 translate-x-0.5' : ''"></span>
+            <span
+                class="w-full h-0.5 bg-[#2E2E2E] rounded-full transition-all duration-300"
+                :class="isMobileMenuOpen ? 'opacity-0' : ''"></span>
+            <span
+                class="w-full h-0.5 bg-[#00A659] rounded-full transition-all duration-300 origin-left"
+                :class="isMobileMenuOpen ? '-rotate-45 translate-x-0.5' : ''"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+          class="md:hidden overflow-hidden transition-all duration-300"
+          :class="isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'">
+        <div class="py-6 space-y-1 border-t border-[#00A659]/20">
+          <router-link
+              to="/"
+              class="block px-4 py-3 text-[#2E2E2E] font-medium hover:text-[#00A659] hover:bg-[#00A659]/10 rounded-lg transition-all"
+              @click="closeMobileMenu">
+            Home
+          </router-link>
+
+          <router-link
+              to="/about"
+              class="block px-4 py-3 text-[#2E2E2E] font-medium hover:text-[#00A659] hover:bg-[#00A659]/10 rounded-lg transition-all"
+              @click="closeMobileMenu">
+            About
+          </router-link>
+
+          <router-link
+              to="/services"
+              class="block px-4 py-3 text-[#2E2E2E] font-medium hover:text-[#00A659] hover:bg-[#00A659]/10 rounded-lg transition-all"
+              @click="closeMobileMenu">
+            Services
+          </router-link>
+
+          <router-link
+              to="/contact"
+              class="block px-4 py-3 text-[#2E2E2E] font-medium hover:text-[#00A659] hover:bg-[#00A659]/10 rounded-lg transition-all"
+              @click="closeMobileMenu">
+            Contact
+          </router-link>
+
+          <div class="pt-4 space-y-2 border-t border-[#00A659]/20 mt-4">
+            <router-link
+                to="/login"
+                class="block w-full px-4 py-3 text-center text-[#2E2E2E] font-semibold hover:text-[#00A659] hover:bg-[#00A659]/10 rounded-lg transition-all"
+                @click="closeMobileMenu">
+              Log in
+            </router-link>
+
+            <router-link
+                to="/signup"
+                class="block w-full px-4 py-3 text-center font-semibold text-white bg-gradient-to-r from-[#00A659] to-[#00837B] rounded-lg shadow-lg shadow-[#00A659]/20"
+                @click="closeMobileMenu">
+              Get Started
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+
 <style scoped>
-.navbar {
-  display: flex;
-  z-index: 1000;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-image: url(../assets/highlands.jpeg);
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  z-index: -1;
-}
-
-.logo-text {
-  padding-right: 400px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: #2563eb;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-.navbar-menu {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-start {
-  display: flex;
-  gap: 1rem;
-}
-.navbar-end {
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar-item.outline {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-weight: 900;
-  background: #60a5fa;
-  border: 2px solid rgba(19, 146, 244, 0.717);
-  border-radius: 0.5rem;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar-item:hover {
-  opacity: 0.8;
-}
-
-
-.btn {
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  color: white;
-}
-
-
-.btn.outline {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: transparent;
-}
-
-
-.btn.outline:hover {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-}
-
-
-.btn.blur {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(16px);
-  border: none;
-}
-
-
-.navbar-toggle {
-  display: none;
-  background: none;
-  border: none;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  width: 25px;
-  height: 3px;
-  background: white;
-  display: block;
-  position: relative;
-  transition: 0.3s;
-}
-
-.hamburger::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-}
-
-.hamburger::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-}
-
-
-@media (max-width: 768px) {
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-menu.is-active {
-    display: flex;
-  }
-
-  .navbar-start,
-  .navbar-end {
-    flex-direction: column;
-    width: 100%;
-  }
+/* Active route styling */
+.router-link-active {
+  color: #00A659 !important;
 }
 </style>

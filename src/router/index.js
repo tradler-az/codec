@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/AppHome.vue'
-import About from '../views/AppAbout.vue'
+import Home from '../views/HomeView.vue'
+import About from '../views/AboutView.vue'
 
 const routes = [
   {
@@ -16,17 +16,17 @@ const routes = [
   {
     path: '/services',
     name: 'Services',
-    component: () => import('../views/AppServices.vue')
+    component: () => import('../views/ServicesView.vue')
   },
 //   {
 //     path: '/contact',
 //     name: 'Contact',
-//     component: () => import('../views/AppContact.vue')
+//     component: () => import('../views/ContactView.vue')
 //   }
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/AppLogin.vue')
+    component: () => import('../views/Auth/LoginView.vue')
   }
 //   {
 //     path: '/signup',

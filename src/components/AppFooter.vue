@@ -1,189 +1,92 @@
-<script setup lang="js">
-import { faLocation, faMailReply, faPhoneAlt, faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/vue-fontawesome';
-
+<script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faLocationDot, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 </script>
 
 <template>
-    <footer class="footer">
-        <div class="footer-upper">
-            <div class="footer-col">
-                <span class="footer-logo">VueCodec</span>
-                <p class="footer-description">
-                    Kenya's benchmark in Integrated Facilities Management — delivering unmatched efficiency, comfort,
-                    sustainability, compliance, and cost-effective results in facilities and properties that add value
-                    to every client and partner we serve.
-                </p>
-            </div>
+  <footer class="bg-gray-50 px-8 pt-12 pb-6 mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div class="flex flex-col gap-2.5">
+        <span class="text-2xl font-bold text-blue-600">VueCodec</span>
+        <p class="text-gray-600 leading-relaxed">
+          Kenya's benchmark in Integrated Facilities Management — delivering unmatched efficiency, comfort,
+          sustainability, compliance, and cost-effective results in facilities and properties that add value
+          to every client and partner we serve.
+        </p>
+      </div>
 
+      <!-- Quick Links -->
+      <div class="flex flex-col gap-2.5">
+        <h4 class="text-lg font-semibold mb-1.5">Quick Links</h4>
+        <nav class="flex flex-col gap-1.5">
+          <router-link to="/" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
+            Home
+          </router-link>
+          <router-link to="/about" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
+            About
+          </router-link>
+          <router-link to="/services" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
+            Services
+          </router-link>
+          <router-link to="/contact" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
+            Contact
+          </router-link>
+        </nav>
+      </div>
 
-            <div class="footer-col">
-                <h4 class="footer-title">Quick Links</h4>
-                <nav class="footer-links">
-                    <router-link to="/" class="footer-link">Home</router-link>
-                    <router-link to="/about" class="footer-link">About</router-link>
-                    <router-link to="/services" class="footer-link">Services</router-link>
-                    <router-link to="/contact" class="footer-link">Contact</router-link>
-                </nav>
-            </div>
+      <!-- Contact Info -->
+      <div class="flex flex-col gap-2.5">
+        <h4 class="text-lg font-semibold mb-1.5">Contact</h4>
+        <p class="text-sm text-gray-800 flex items-center gap-2">
+          <font-awesome-icon :icon="faEnvelope" class="text-blue-600" />
+          info@codec.co.ke
+        </p>
+        <p class="text-sm text-gray-800 flex items-center gap-2">
+          <font-awesome-icon :icon="faPhone" class="text-blue-600" />
+          +254 700 000000
+        </p>
+        <p class="text-sm text-gray-800 flex items-center gap-2">
+          <font-awesome-icon :icon="faLocationDot" class="text-blue-600" />
+          Nairobi, Kenya
+        </p>
+      </div>
+    </div>
 
-            <div class="footer-col">
-                <h4 class="footer-title">Contact</h4>
-                <p class="contact-item">
-                    <faMailReply /> info@codec.co.ke
-                </p>
-                <p class="contact-item">
-                    <faPhoneAlt /> +254 700 000000
-                </p>
-                <p class="contact-item">
-                    <faLocation /> Nairobi, Kenya
-                </p>
-            </div>
+    <!-- Footer Bottom -->
+    <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-gray-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 flex-wrap">
+      <p class="text-gray-700">&copy; 2024 Codec. All rights reserved.</p>
 
-        </div>
+      <!-- Social Links -->
+      <div class="flex gap-4 items-center">
+        <a href="https://facebook.com" target="_blank" class="text-gray-600 text-xl hover:text-blue-600 transition-colors" aria-label="Facebook">
+          <font-awesome-icon :icon="faFacebook" />
+        </a>
+        <a href="https://github.com" target="_blank" class="text-gray-600 text-xl hover:text-blue-600 transition-colors" aria-label="GitHub">
+          <font-awesome-icon :icon="faGithub" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="text-gray-600 text-xl hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+          <font-awesome-icon :icon="faLinkedin" />
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-gray-600 text-xl hover:text-blue-600 transition-colors" aria-label="Instagram">
+          <font-awesome-icon :icon="faInstagram" />
+        </a>
+      </div>
 
-
-        <div class="footer-lower">
-            <p>&copy; 2024 Codec. All rights reserved.</p>
-
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
-                    <faFacebook />
-                </a>
-                <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
-                    <faGithub />
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <faLinkedin />
-                </a>
-                <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
-                    <faInstagram />
-                </a>
-            </div>
-
-            <div class="footer-policies">
-                <router-link to="/privacy" class="policy-link">Privacy Policy</router-link>
-                <router-link to="/terms" class="policy-link">Terms of Service</router-link>
-            </div>
-        </div>
-
-    </footer>
+      <!-- Policies -->
+      <div class="flex gap-4">
+        <router-link to="/privacy" class="text-sm text-blue-600 hover:underline">
+          Privacy Policy
+        </router-link>
+        <router-link to="/terms" class="text-sm text-blue-600 hover:underline">
+          Terms of Service
+        </router-link>
+      </div>
+    </div>
+  </footer>
 </template>
 
-
 <style scoped>
-.footer {
-    background: #f8f9fa;
-    padding: 3rem 2rem 1.5rem;
-    margin-top: 4rem;
-}
-
-
-.footer-upper {
-    max-width: 1800px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.footer-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2563eb;
-}
-
-.footer-description {
-    color: #555;
-    line-height: 1.6;
-}
-
-.footer-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-}
-
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-.footer-link:hover {
-    color: #2563eb;
-}
-
-
-.contact-item {
-    font-size: 0.95rem;
-    color: #333;
-}
-
-
-.footer-lower {
-    max-width: 2000px;
-    margin: 2.5rem auto 0;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.footer-policies {
-    display: flex;
-    gap: 1rem;
-}
-
-.policy-link {
-    text-decoration: none;
-    font-size: 0.95rem;
-    color: #2563eb;
-}
-
-.policy-link:hover {
-    text-decoration: underline;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.social-link {
-    font-size: 1.2rem;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    color: #2563eb;
-}
-
-@media (max-width: 900px) {
-    .footer-upper {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-lower {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+/* Any additional custom styles if needed */
 </style>

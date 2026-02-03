@@ -1,3 +1,6 @@
+<script setup>
+
+</script>
 <template>
   <div class="services">
     <p>Coming Soon</p>
