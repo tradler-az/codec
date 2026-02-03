@@ -4,61 +4,104 @@ import { faLocationDot, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-
 import { faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 </script>
 
-<template>
-  <footer class="bg-gray-50 px-8 pt-12 pb-6 mt-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Company Info -->
-      <div class="flex flex-col gap-2.5">
-        <span class="text-2xl font-bold text-blue-600">VueCodec</span>
-        <p class="text-gray-600 leading-relaxed">
-          Kenya's benchmark in Integrated Facilities Management — delivering unmatched efficiency, comfort,
-          sustainability, compliance, and cost-effective results in facilities and properties that add value
-          to every client and partner we serve.
-        </p>
-      </div>
 
-      <!-- Quick Links -->
-      <div class="flex flex-col gap-2.5">
-        <h4 class="text-lg font-semibold mb-1.5">Quick Links</h4>
-        <nav class="flex flex-col gap-1.5">
-          <router-link to="/" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
-            Home
-          </router-link>
-          <router-link to="/about" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
-            About
-          </router-link>
-          <router-link to="/services" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
-            Services
-          </router-link>
-          <router-link to="/contact" class="text-gray-800 font-medium hover:text-blue-600 transition-colors">
-            Contact
-          </router-link>
-        </nav>
-      </div>
+<template>
+  <footer class="relative bg-white border-t border-[#00A659]/20 mt-24">
+    <!-- Top glow accent -->
+    <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[#00A659]/40 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- Brand -->
+        <div class="space-y-4">
+          <img
+            src="../assets/optival-logo.png"
+            alt="OptivalFM Logo"
+            class="h-16 w-auto object-contain"
+          />
+          <p class="text-sm text-[#2E2E2E]/70 leading-relaxed">
+            Optival FM is a modern digital platform delivering trusted content,
+            innovation, and community-driven services.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-[#2E2E2E] mb-4 uppercase tracking-wide">
+            Company
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <router-link to="/about" class="footer-link">About</router-link>
+            </li>
+            <li>
+              <router-link to="/services" class="footer-link">Services</router-link>
+            </li>
+            <li>
+              <router-link to="/contact" class="footer-link">Contact</router-link>
+            </li>
+          </ul>
+        </div>
+
+
 
       <!-- Contact Info -->
       <div class="flex flex-col gap-2.5">
         <h4 class="text-lg font-semibold mb-1.5">Contact</h4>
         <p class="text-sm text-gray-800 flex items-center gap-2">
-          <font-awesome-icon :icon="faEnvelope" class="text-blue-600" />
+          <font-awesome-icon :icon="faEnvelope" class="text-green-600" />
           info@codec.co.ke
         </p>
         <p class="text-sm text-gray-800 flex items-center gap-2">
-          <font-awesome-icon :icon="faPhone" class="text-blue-600" />
+          <font-awesome-icon :icon="faPhone" class="text-green-600" />
           +254 700 000000
         </p>
         <p class="text-sm text-gray-800 flex items-center gap-2">
-          <font-awesome-icon :icon="faLocationDot" class="text-blue-600" />
+          <font-awesome-icon :icon="faLocationDot" class="text-green-600" />
           Nairobi, Kenya
         </p>
       </div>
-    </div>
+    
 
-    <!-- Footer Bottom -->
-    <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-gray-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 flex-wrap">
-      <p class="text-gray-700">&copy; 2024 Codec. All rights reserved.</p>
 
-      <!-- Social Links -->
+
+        <!-- Resources -->
+        <div>
+          <h4 class="text-sm font-semibold text-[#2E2E2E] mb-4 uppercase tracking-wide">
+            Resources
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="space-y-5">
+          <h4 class="text-sm font-semibold text-[#2E2E2E] uppercase tracking-wide">
+            Get Started
+          </h4>
+          <p class="text-sm text-[#2E2E2E]/70">
+            Join Optival FM and explore modern digital solutions built for you.
+          </p>
+          <router-link
+            to="/signup"
+            class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white bg-gradient-to-r from-[#00A659] to-[#00837B] rounded-lg shadow-lg shadow-[#00A659]/20 hover:shadow-xl hover:shadow-[#00A659]/30 transition-all duration-300"
+          >
+            Create Account
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 pt-6 border-t border-[#00A659]/20 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-[#2E2E2E]/60">
+          © {{ new Date().getFullYear() }} Optival FM. All rights reserved.
+        </p>
+
+        <!-- Social Links -->
       <div class="flex gap-4 items-center">
         <a href="https://facebook.com" target="_blank" class="text-gray-600 text-xl hover:text-blue-600 transition-colors" aria-label="Facebook">
           <font-awesome-icon :icon="faFacebook" />
@@ -73,20 +116,7 @@ import { faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/free
           <font-awesome-icon :icon="faInstagram" />
         </a>
       </div>
-
-      <!-- Policies -->
-      <div class="flex gap-4">
-        <router-link to="/privacy" class="text-sm text-blue-600 hover:underline">
-          Privacy Policy
-        </router-link>
-        <router-link to="/terms" class="text-sm text-blue-600 hover:underline">
-          Terms of Service
-        </router-link>
       </div>
     </div>
   </footer>
 </template>
-
-<style scoped>
-/* Any additional custom styles if needed */
-</style>

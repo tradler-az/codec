@@ -18,21 +18,21 @@ const routes = [
     name: 'Services',
     component: () => import('../views/ServicesView.vue')
   },
-//   {
-//     path: '/contact',
-//     name: 'Contact',
-//     component: () => import('../views/ContactView.vue')
-//   }
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/ContactView.vue')
+  },
   {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Auth/LoginView.vue')
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: () => import('../views/Auth/Signup.vue')
   }
-//   {
-//     path: '/signup',
-//     name: 'Signup',
-//     component: () => import('../views/Signup.vue')
-//   }
 ]
 
 const router = createRouter({
