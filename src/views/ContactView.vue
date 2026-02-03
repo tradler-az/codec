@@ -5,8 +5,7 @@ import {
     faPhone, faEnvelope, faMapMarkerAlt, faClock,
     faTriangleExclamation, faGlobe, faChevronDown, faPaperPlane
 } from '@fortawesome/free-solid-svg-icons'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+
 // Form State
 const form = ref({
     firstName: '',
@@ -40,52 +39,6 @@ const vScroll = {
     }
 }
 
-// State
-const map = ref(null);
-const userMarker = ref(null);
-const currentCity = ref("Nairobi, Kenya");
-
-// Coordinates extracted from your Google Maps link
-const targetLocation = [-1.286389, 36.817223];
-
-onMounted(() => {
-    // 1. Initialize the Map
-    map.value = L.map('map-container', { 
-        zoomControl: false,
-        attributionControl: false 
-    }).setView(targetLocation, 15);
-
-    // 2. Add Map Tiles (Standard OpenStreetMap)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map.value);
-
-    // 3. Add a static marker for your specific "Nairobi" link location
-    L.marker(targetLocation).addTo(map.value)
-        .bindPopup('<b>Target Destination</b>')
-        .openPopup();
-
-    // 4. Start Live Geolocation Tracking
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(
-            (position) => {
-                const { latitude, longitude } = position.coords;
-                const userCoords = [latitude, longitude];
-
-                // Update or create the "Live" marker
-                if (!userMarker.ref) {
-                    const liveIcon = L.divIcon({
-                        className: 'bg-[#00A659] w-4 h-4 rounded-full border-2 border-white shadow-md',
-                        iconSize: [16, 16]
-                    });
-                    userMarker.value = L.marker(userCoords, { icon: liveIcon }).addTo(map.value);
-                } else {
-                    userMarker.value.setLatLng(userCoords);
-                }
-            },
-            (error) => console.error("Location error:", error),
-            { enableHighAccuracy: true }
-        );
-    }
-});
 </script>
 
 <template>
@@ -267,20 +220,20 @@ onMounted(() => {
                         <p class="text-gray-600">Nairobi</p>
                         <p class="text-gray-600">Kenya</p>
                     </div>
-    <div class="relative group w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border border-white/10">
-        <!-- Live Map Container -->
-        <div 
-            class="absolute bg-[#1a1a1a] inset-0 w-full h-full border-0 grayscale-[20%] contrast-[1.1] z-0"
-        ></div>
-
-        <!-- Floating UI Overlay -->
-        <div class="absolute bottom-4 left-4 z-[1000] bg-[#2E2E2E]/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
-            <p class="text-white text-xs font-bold flex items-center gap-2">
-                <font-awesome-icon :icon="faMapMarkerAlt" class="text-[#00A659]" />
-                {{ currentCity }}
-            </p>
-        </div>
-    </div>
+                    <div
+                        class="relative group w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border border-white/10">
+                        <iframe src="https://www.google.com"
+                            class="absolute inset-0 w-full h-full border-0 grayscale-[20%] contrast-[1.1]"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div
+                            class="absolute bottom-4 left-4 bg-[#2E2E2E]/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+                            <p class="text-white text-xs font-bold flex items-center gap-2">
+                                <font-awesome-icon :icon="faMapMarkerAlt" class="text-[#00A659]" />
+                                Nairobi, Kenya
+                            </p>
+                        </div>
+                    </div>
 
 
                 </div>
@@ -339,7 +292,4 @@ onMounted(() => {
 }
 
 
-leaflet-default-icon-path {
-    background-image: url(https://unpkg.com);
-}
 </style>
