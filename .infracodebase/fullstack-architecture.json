@@ -1,0 +1,272 @@
+{
+  "name": "OptivalFM Full-Stack Architecture",
+  "nodes": [
+    {
+      "id": "users",
+      "label": "Users",
+      "x": 840,
+      "y": 218,
+      "subtitle": "Global Audience",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/aws/general/user.png",
+      "type": "resource"
+    },
+    {
+      "id": "cdn",
+      "label": "CDN",
+      "x": 66,
+      "y": 418,
+      "subtitle": "Content Delivery",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/gcp/network/cdn.png",
+      "type": "resource"
+    },
+    {
+      "id": "dns",
+      "label": "DNS",
+      "x": 1228,
+      "y": 568,
+      "subtitle": "Domain Routing",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/gcp/network/dns.png",
+      "type": "resource"
+    },
+    {
+      "id": "ssl",
+      "label": "SSL/TLS",
+      "x": 840,
+      "y": 703,
+      "subtitle": "Encryption",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/aws/general/ssl-padlock.png",
+      "type": "resource"
+    },
+    {
+      "id": "firewall",
+      "label": "Firewall",
+      "x": 840,
+      "y": 903,
+      "subtitle": "Security Layer",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/generic/network/firewall.png",
+      "type": "resource"
+    },
+    {
+      "id": "lb",
+      "label": "Load Balancer",
+      "x": 650,
+      "y": 1111,
+      "subtitle": "Traffic Distribution",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/azure/networking/load-balancer.png",
+      "type": "resource"
+    },
+    {
+      "id": "webapp",
+      "label": "Web Application",
+      "x": 650,
+      "y": 1350,
+      "subtitle": "Application Server",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/elastic/saas/cloud.png",
+      "type": "container",
+      "width": 310,
+      "height": 930
+    },
+    {
+      "id": "frontend",
+      "label": "Vue 3 Frontend",
+      "subtitle": "SPA Application",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/programming/framework/vue.png",
+      "type": "resource",
+      "x": 100,
+      "y": 90,
+      "parentId": "webapp"
+    },
+    {
+      "id": "nginx",
+      "label": "Nginx",
+      "subtitle": "Web Server",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/onprem/network/nginx.png",
+      "type": "resource",
+      "x": 90,
+      "y": 390,
+      "parentId": "webapp"
+    },
+    {
+      "id": "api",
+      "label": "API Server",
+      "subtitle": "REST/GraphQL",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/k8s/controlplane/api.png",
+      "type": "resource",
+      "x": 100,
+      "y": 690,
+      "parentId": "webapp"
+    },
+    {
+      "id": "data",
+      "label": "Data Layer",
+      "x": 650,
+      "y": 2400,
+      "subtitle": "Persistence",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/aws/database/database.png",
+      "type": "container",
+      "width": 520,
+      "height": 330
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "subtitle": "PostgreSQL/MySQL",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/programming/flowchart/database.png",
+      "type": "resource",
+      "x": 90,
+      "y": 90,
+      "parentId": "data"
+    },
+    {
+      "id": "storage",
+      "label": "File Storage",
+      "subtitle": "Assets/Media",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/aws/storage/storage.png",
+      "type": "resource",
+      "x": 310,
+      "y": 90,
+      "parentId": "data"
+    },
+    {
+      "id": "monitoring",
+      "label": "Monitoring & Analytics",
+      "x": 1540,
+      "y": 1650,
+      "subtitle": "Observability",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/gcp/operations/monitoring.png",
+      "type": "container",
+      "width": 520,
+      "height": 330
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics",
+      "subtitle": "User Metrics",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/aws/analytics/analytics.png",
+      "type": "resource",
+      "x": 90,
+      "y": 90,
+      "parentId": "monitoring"
+    },
+    {
+      "id": "logs",
+      "label": "Logs",
+      "subtitle": "Application Logs",
+      "icon": "https://stouse2icbprd.blob.core.windows.net/public/icons/programming/language/javascript.png",
+      "type": "resource",
+      "x": 310,
+      "y": 90,
+      "parentId": "monitoring"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "users",
+      "target": "cdn",
+      "label": "HTTPS"
+    },
+    {
+      "id": "e2",
+      "source": "users",
+      "target": "dns",
+      "label": "resolve"
+    },
+    {
+      "id": "e3",
+      "source": "cdn",
+      "target": "ssl",
+      "label": "secure"
+    },
+    {
+      "id": "e4",
+      "source": "ssl",
+      "target": "firewall",
+      "label": "filter"
+    },
+    {
+      "id": "e5",
+      "source": "firewall",
+      "target": "lb",
+      "label": "forward"
+    },
+    {
+      "id": "e6",
+      "source": "lb",
+      "target": "webapp",
+      "label": "distribute",
+      "color": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "frontend",
+      "target": "nginx",
+      "label": "serves",
+      "color": "blue"
+    },
+    {
+      "id": "e8",
+      "source": "nginx",
+      "target": "api",
+      "label": "proxy",
+      "color": "blue"
+    },
+    {
+      "id": "e9",
+      "source": "api",
+      "target": "data",
+      "label": "queries",
+      "color": "green"
+    },
+    {
+      "id": "e10",
+      "source": "database",
+      "target": "data"
+    },
+    {
+      "id": "e11",
+      "source": "storage",
+      "target": "data"
+    },
+    {
+      "id": "e12",
+      "source": "webapp",
+      "target": "monitoring",
+      "label": "metrics",
+      "color": "purple"
+    },
+    {
+      "id": "e13",
+      "source": "analytics",
+      "target": "monitoring"
+    },
+    {
+      "id": "e14",
+      "source": "logs",
+      "target": "monitoring"
+    }
+  ],
+  "legend": {
+    "edges": [
+      {
+        "label": "Request Flow",
+        "style": "solid"
+      },
+      {
+        "label": "Application Tier",
+        "color": "blue",
+        "style": "solid"
+      },
+      {
+        "label": "Data Access",
+        "color": "green",
+        "style": "solid"
+      },
+      {
+        "label": "Monitoring",
+        "color": "purple",
+        "style": "solid"
+      }
+    ]
+  }
+}
