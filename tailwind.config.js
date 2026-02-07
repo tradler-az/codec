@@ -7,33 +7,33 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Primary Green Palette (maintained from original)
+            
                 primary: {
                     50: '#e6f7f0',
                     100: '#b3e8d4',
                     200: '#80d9b8',
                     300: '#4dca9c',
                     400: '#1abb80',
-                    500: '#00A659', // Main brand green
+                    500: '#00A659', 
                     600: '#008547',
                     700: '#006435',
                     800: '#004323',
                     900: '#002211',
                 },
-                // Teal Accent (for gradients)
+                
                 teal: {
                     50: '#e6f5f4',
                     100: '#b3e2df',
                     200: '#80cfca',
                     300: '#4dbcb5',
                     400: '#1aa9a0',
-                    500: '#00837B', // Brand teal
+                    500: '#00837B', 
                     600: '#006962',
                     700: '#004f4a',
                     800: '#003531',
                     900: '#001a19',
                 },
-                // Red Palette (for alerts, errors, and eye-catching elements)
+                
                 red: {
                     50: '#fef2f2',
                     100: '#fee2e2',
@@ -46,7 +46,7 @@ export default {
                     800: '#991b1b',
                     900: '#7f1d1d',
                 },
-                // Enhanced Black/Gray Palette
+                
                 dark: {
                     50: '#f8f9fa',
                     100: '#e9ecef',
@@ -56,7 +56,7 @@ export default {
                     500: '#6c757d',
                     600: '#495057',
                     700: '#343a40',
-                    800: '#2E2E2E', // Main dark color
+                    800: '#2E2E2E', 
                     900: '#1a1a1a',
                     950: '#0a0a0a',
                 },

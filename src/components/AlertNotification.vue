@@ -6,7 +6,7 @@ import { faXmark, faCircleExclamation, faCircleCheck, faCircleInfo, faTriangleEx
 const props = defineProps({
   type: {
     type: String,
-    default: 'info', // 'error', 'success', 'warning', 'info'
+    default: 'info',
     validator: (value) => ['error', 'success', 'warning', 'info'].includes(value)
   },
   title: {
@@ -19,7 +19,7 @@ const props = defineProps({
   },
   duration: {
     type: Number,
-    default: 5000 // Auto-dismiss after 5 seconds (0 = no auto-dismiss)
+    default: 5000 
   },
   show: {
     type: Boolean,

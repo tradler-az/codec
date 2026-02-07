@@ -6,7 +6,7 @@ import {
   faCheckCircle, faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
 
-// Scroll Animation Directive
+// Scroll Animation
 const vScroll = {
   mounted: (el) => {
     const observer = new IntersectionObserver((entries) => {
@@ -54,8 +54,6 @@ const coreServices = [
         />
         <div class="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-800/80 to-dark-900/95"></div>
       </div>
-
-      <!-- Animated glow effect -->
       <div class="absolute inset-0 bg-gradient-to-tr from-primary-500/10 via-transparent to-red-500/10 opacity-30 mix-blend-overlay"></div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -204,13 +202,10 @@ const coreServices = [
 
     <!-- packages -->
     <section class="relative py-32 bg-dark-900 overflow-hidden">
-      <!-- Background image -->
       <div class="absolute inset-0">
         <img src="../assets/office green1.jpeg" class="w-full h-full object-cover opacity-20" alt="Background" />
         <div class="absolute inset-0 bg-gradient-to-b from-dark-900/80 via-dark-900/90 to-dark-900"></div>
       </div>
-
-      <!-- Decorative blobs -->
       <div class="absolute top-0 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
 
@@ -278,7 +273,7 @@ const coreServices = [
 </template>
 
 <style scoped>
-/* animation of the items */
+/* animation */
 .reveal, .reveal-up, .reveal-left, .reveal-right {
   opacity: 0;
   transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);

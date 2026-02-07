@@ -1,14 +1,32 @@
   <script setup>
   import Navbar from './components/AppNavBar.vue'
   import Footer from './components/AppFooter.vue'
+import Loader from './components/Loader.vue'
+import { onMounted, ref } from 'vue';
+
+const pageLoader = ref(false)
+
+onMounted(() => {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      pageLoader.value = true
+    }, 2000)
+  })
+})
+
   </script>
 
+
+
 <template>
-  <div id="app">
+<div >
+  <Loader v-if="!pageLoader" />
+  <div id="app" v-show="pageLoader">
     <Navbar />
     <router-view />
     <Footer />
-    </div>
+  </div>
+</div>
 </template>
 <style>
 #app {

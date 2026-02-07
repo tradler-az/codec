@@ -7,7 +7,6 @@ import { faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/free
 
 <template>
   <footer class="relative bg-gradient-to-b from-white via-dark-50 to-dark-100 border-t border-dark-200 mt-32">
-    <!-- Top glow accent -->
     <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent"></div>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -138,7 +137,7 @@ import { faFacebook, faGithub, faLinkedin, faInstagram } from '@fortawesome/free
           </p>
           <div class="hidden md:block w-px h-4 bg-dark-300"></div>
           <p class="text-xs text-dark-500">
-            Built with <span class="text-red-500">❤</span> in Kenya
+            Built with <span class="text-red-500">Codec</span> in Kenya
           </p>
         </div>
 

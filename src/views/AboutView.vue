@@ -40,8 +40,6 @@ const techFeatures = [
         />
         <div class="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-800/80 to-dark-900/95"></div>
       </div>
-
-      <!-- Animated glow effect -->
       <div class="absolute inset-0 bg-gradient-to-tr from-primary-500/10 via-transparent to-teal-500/10 opacity-30 mix-blend-overlay"></div>
 
       <!-- Hero Content -->

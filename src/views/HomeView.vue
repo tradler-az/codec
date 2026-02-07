@@ -27,11 +27,11 @@ const slides = [
 ]
 // Partners Data
 const partners = [
-  { name: 'Partner 1', logo: new URL('../assets/p dosh.png', import.meta.url).href },
-  { name: 'Partner 2', logo: new URL('../assets/p epra.png', import.meta.url).href },
-  { name: 'Partner 3', logo: new URL('../assets/p nca.png', import.meta.url).href },
-  { name: 'Partner 4', logo: new URL('../assets/p nema.png', import.meta.url).href },
-  { name: 'Partner 5', logo: new URL('../assets/p kebs.png', import.meta.url).href },
+  { name: 'DOSH', logo: new URL('../assets/partners/p dosh.png', import.meta.url).href },
+  { name: 'EPRA', logo: new URL('../assets/partners/p epra.png', import.meta.url).href },
+  { name: 'NCA', logo: new URL('../assets/partners/p nca.png', import.meta.url).href },
+  { name: 'NEMA', logo: new URL('../assets/partners/p nema.png', import.meta.url).href },
+  { name: 'KEBS', logo: new URL('../assets/partners/p kebs.png', import.meta.url).href },
 ]
 
 const features = computed(() => [
@@ -88,8 +88,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
           </transition>
 
           <div class="absolute inset-0 bg-gradient-to-r from-dark-900/95 via-dark-800/60 to-transparent"></div>
-
-          <!-- Animated glow effect -->
           <div class="absolute inset-0 bg-gradient-to-tr from-primary-500/10 via-transparent to-red-500/10 opacity-30 mix-blend-overlay"></div>
 
           <!-- Slide Content -->
@@ -119,16 +117,16 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
                 Learn More
               </router-link>
             </div>
-          </div>
+          </div><br>
 
           <!-- Nav Controls -->
-          <div class="absolute left-12 bottom-8 flex gap-4 z-20">
+          <div class="absolute right-1/2 bottom-8 flex gap-4 z-20">
             <button @click="prevSlide" class="w-12 h-12 rounded-full border-2 border-white/40 backdrop-blur-sm flex items-center justify-center text-white text-xl font-bold hover:bg-primary-500 hover:border-primary-500 transition-all duration-300">‹</button>
             <button @click="nextSlide" class="w-12 h-12 rounded-full border-2 border-white/40 backdrop-blur-sm flex items-center justify-center text-white text-xl font-bold hover:bg-primary-500 hover:border-primary-500 transition-all duration-300">›</button>
           </div>
 
           <!-- Slide Indicators -->
-          <div class="absolute bottom-8 right-12 flex gap-2 z-20">
+          <div class="absolute bottom-8 right-12 flex gap-2 z-19">
             <button
               v-for="(slide, index) in slides"
               :key="index"
@@ -143,7 +141,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
 
 <!-- why optivalFM -->
 <section class="py-32 relative overflow-hidden">
-  <!-- Background gradient -->
   <div class="absolute inset-0 bg-gradient-to-b from-white via-primary-50/30 to-white"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
@@ -167,10 +164,7 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
         :style="{ transitionDelay: `${i * 150}ms` }"
         class="reveal-up relative bg-white p-12 rounded-3xl shadow-lg shadow-primary-500/5 text-center group hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-500 border border-dark-100 hover:border-primary-300 hover:-translate-y-2"
       >
-        <!-- Top accent line -->
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <!-- Icon with gradient background -->
         <div class="relative inline-flex items-center justify-center w-16 h-16 mb-6">
           <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-teal-500/20 rounded-2xl group-hover:scale-110 transition-transform duration-500"></div>
           <div class="relative text-5xl text-primary-600 group-hover:scale-110 transition-transform duration-300">
@@ -192,7 +186,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
 
     <!-- About section  -->
     <section class="py-32 bg-gradient-to-br from-dark-50 via-white to-primary-50/20 relative overflow-hidden">
-      <!-- Decorative elements -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
 
@@ -236,7 +229,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
 
 <!-- how it works -->
 <section class="py-32 bg-white relative overflow-hidden">
-  <!-- Background decorative elements -->
   <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl"></div>
   <div class="absolute bottom-20 right-10 w-72 h-72 bg-red-500/5 rounded-full blur-3xl"></div>
 
@@ -286,7 +278,7 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
         </p>
       </div>
 
-      <!-- Step 3 - Featured with RED accent -->
+      <!-- Step 3 -->
       <div v-scroll class="reveal-up relative z-10 flex flex-col items-center group" style="transition-delay: 300ms;">
         <div class="relative mb-8">
           <div class="absolute inset-0 bg-red-500/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
@@ -324,7 +316,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
 
 <!-- services -->
 <section class="py-32 bg-gradient-to-b from-primary-50/30 via-white to-white overflow-hidden relative">
-  <!-- Decorative blob -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-gradient-to-r from-primary-500/10 to-teal-500/10 rounded-full blur-3xl"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -371,8 +362,8 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
         </div>
       </div>
 
-      <!-- Service advert - Featured with RED -->
-      <div v-scroll class="reveal-up relative bg-gradient-to-br from-red-500 via-red-600 to-primary-600 p-12 rounded-3xl shadow-2xl shadow-red-500/20 group hover:shadow-3xl hover:shadow-red-500/30 transition-all duration-500 overflow-hidden transform hover:scale-105" style="transition-delay: 150ms;">
+      <!-- Service advert-->
+      <div v-scroll class="reveal-up relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-600 p-12 rounded-3xl shadow-2xl shadow-red-500/20 group hover:shadow-3xl hover:shadow-red-500/30 transition-all duration-500 overflow-hidden transform hover:scale-105" style="transition-delay: 150ms;">
         <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
         <div class="relative z-10">
@@ -435,6 +426,102 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
 </section>
 
 
+ <!-- service packages -->
+    <section class="relative py-24 bg-fixed bg-cover bg-center bg-no-repeat"
+      style="background-image: url('/src/assets/office-green1.jpeg');">
+      <div class="absolute inset-0 bg-[#00A659]/10"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20">
+          <h2 v-scroll class="reveal text-sm font-bold tracking-[0.3em] text-[#00A659] uppercase mb-4">
+            Our Solutions
+          </h2>
+          <p v-scroll class="reveal delay-100 text-3xl lg:text-5xl font-bold text-white/130 max-w-2xl mx-auto">
+            Tailored Facility Management Packages
+          </p>
+          <div class="h-1 w-20 bg-[#00A659] mx-auto mt-6 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+
+
+          <!-- Starter -->
+          <div v-scroll
+            class="reveal-up group relative bg-white/[0.15] backdrop-blur-2xl border border-white/20 p-10 rounded-[2.5rem] text-[#2E2E2E] transition-all duration-500 hover:bg-white/[0.25] hover:border-[#00A659]/40 hover:shadow-2xl overflow-hidden">
+            <div
+              class="absolute -top-24 -left-24 w-48 h-48 bg-[#00A659]/20 blur-[60px] group-hover:bg-[#00A659]/30 transition-colors duration-500">
+            </div>
+            <div
+              class="relative w-16 h-16 bg-white/40 rounded-2xl flex items-center justify-center mb-8 border border-white/20 group-hover:scale-110 group-hover:bg-[#00A659]/10 group-hover:border-[#00A659]/30 transition-all duration-500">
+              <font-awesome-icon :icon="faRocket"
+                class="text-2xl text-[#00A659] filter drop-shadow-[0_0_8px_rgba(0,166,89,0.3)]" />
+            </div>
+            <h3 class="text-2xl text-[#00A659] font-bold mb-4 tracking-tight">Starter</h3>
+            <p
+              class="text-[#2E2E2E]/80 mb-8 leading-relaxed group-hover:text-[#2E2E2E] transition-colors relative z-10">
+              Essential support for startups and small teams looking to
+              <span class="text-[#00A659] font-bold">sustain</span> professional environments.
+            </p>
+            <button
+              class="w-full py-4 rounded-xl border border-[#00A659]/50 text-[#00A659] bg-[#00A659]/5 hover:bg-[#00A659] hover:text-white transition-all duration-300 font-bold flex items-center justify-center gap-2 group/btn relative z-10">
+              Inquire Now
+              <font-awesome-icon :icon="faArrowRight"
+                class="text-xs group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          <!-- Professional -->
+          <div v-scroll
+            class="reveal-up delay-200 relative bg-gradient-to-br from-[#00A659] to-[#00837B] p-10 rounded-[2rem] text-white shadow-2xl shadow-[#00A659]/20 md:scale-110 z-20">
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2E2E2E] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full border border-white/20">
+              Most Popular
+            </div>
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
+              <font-awesome-icon :icon="faLayerGroup" class="text-2xl text-white" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Professional</h3>
+            <p class="text-white/90 mb-8 leading-relaxed">Advanced optimization-focused solutions to effectively <span
+                class="font-bold">manage</span> your growing operations.</p>
+            <button
+              class="w-full py-4 rounded-xl bg-white text-[#00A659] hover:bg-[#00A659]/15 hover:text-white transition-all duration-300 font-bold shadow-lg">
+              Get Started Free
+            </button>
+          </div>
+
+
+          <!-- Professional: Manage -->
+          <div v-scroll
+            class="reveal-up delay-200 group relative bg-white/[0.2] backdrop-blur-2xl border border-[#00A659]/30 p-10 rounded-[2.5rem] text-[#2E2E2E] transition-all duration-500 hover:bg-white/[0.3] hover:border-[#00A659] hover:shadow-2xl scale-105 z-10 overflow-hidden">
+            <div
+              class="absolute -top-24 -left-24 w-48 h-48 bg-[#00A659]/30 blur-[60px] group-hover:bg-[#00A659]/40 transition-colors duration-500">
+            </div>
+            <div
+              class="relative w-16 h-16 bg-[#00A659] rounded-2xl flex items-center justify-center mb-8 border border-white/20 group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(0,166,89,0.3)]">
+              <font-awesome-icon :icon="faLayerGroup" class="text-2xl text-white" />
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="text-2xl text-[#00A659] font-bold tracking-tight">Professional</h3>
+              <span
+                class="text-[10px] bg-[#00A659] text-white px-2 py-1 rounded-full uppercase font-black">Popular</span>
+            </div>
+            <p
+              class="text-[#2E2E2E]/80 mb-8 leading-relaxed group-hover:text-[#2E2E2E] transition-colors relative z-10">
+              Optimization-focused solutions to help you
+              <span class="text-[#00A659] font-bold">manage</span> and grow your organization effectively.
+            </p>
+            <button
+              class="w-full py-4 rounded-xl bg-[#00A659] text-white hover:bg-[#00837B] shadow-lg shadow-[#00A659]/20 transition-all duration-300 font-bold flex items-center justify-center gap-2 group/btn relative z-10">
+              Get Started
+              <font-awesome-icon :icon="faArrowRight"
+                class="text-xs group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
     <!-- partners -->
 <section class="py-32 bg-gradient-to-b from-white via-dark-50 to-white overflow-hidden relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -451,7 +538,6 @@ const prevSlide = () => { activeSlide.value = (activeSlide.value - 1 + slides.le
     </div>
 
     <div class="relative overflow-hidden py-8">
-      <!-- Gradient edges -->
       <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
       <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
 

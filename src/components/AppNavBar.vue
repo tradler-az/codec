@@ -104,7 +104,7 @@ const resourcesMenuItems = [
           <div class="relative">
             <div class="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/5 rounded-xl transition-colors duration-300 -m-2"></div>
             <img
-                src="../assets/optival-logo.png"
+                src="../assets/optivalFM_2.png"
                 alt="OptivalFM Logo"
                 class="relative h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
             />
