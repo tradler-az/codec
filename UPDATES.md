@@ -11,3 +11,4 @@ dark->
 ## footer (`footer`)
 transition gradient etc
 
+colouring styles transition layouts 

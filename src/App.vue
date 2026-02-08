@@ -13,10 +13,7 @@ onMounted(() => {
     }, 2000)
   })
 })
-
-  </script>
-
-
+</script>
 
 <template>
 <div >

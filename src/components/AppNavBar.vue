@@ -32,37 +32,37 @@ const servicesMenuItems = [
     title: 'Digital Management',
     description: 'Integrated digital facilities platform',
     icon: faBroadcastTower,
-    link: '/services#digital-management'
+    link: '/services/digital-management'  
   },
   {
     title: 'Operations Optimization',
     description: 'Smart scheduling and workflow automation',
     icon: faGear,
-    link: '/services#operations'
+    link: '/services/operations-optimization'  
   },
   {
     title: 'Consultancy Services',
     description: 'Expert guidance and strategic planning',
     icon: faUsers,
-    link: '/services#consultancy'
+    link: '/services/consultancy-services'  
   },
   {
     title: 'Advertising & Marketing',
     description: 'Digital campaigns and brand growth',
     icon: faBullhorn,
-    link: '/services#advertising'
+    link: '/services/advertising-marketing'  
   },
   {
     title: 'Analytics & Insights',
     description: 'Data-driven decision making',
     icon: faChartLine,
-    link: '/services#analytics'
+    link: '/services/analytics-insights'  
   },
   {
     title: 'Compliance & Security',
     description: 'Regulatory compliance and protection',
     icon: faShieldHalved,
-    link: '/services#compliance'
+    link: '/services/compliance-security'  
   }
 ]
 
@@ -160,12 +160,12 @@ const resourcesMenuItems = [
                 v-if="activeDropdown === 'services'"
                 class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[680px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-dark-200/50 p-6 z-50">
                 <div class="grid grid-cols-2 gap-3">
-                  <a
+                  <router-link
                     v-for="item in servicesMenuItems"
                     :key="item.title"
-                    :href="item.link"
+                    :to="item.link"
                     class="group flex items-start gap-4 p-4 rounded-xl hover:bg-primary-50 transition-all duration-300 border border-transparent hover:border-primary-200"
-                    @click="closeMobileMenu">
+                    @click="closeDropdown(); closeMobileMenu();">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-teal-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <font-awesome-icon :icon="item.icon" class="text-white text-lg" />
                     </div>
@@ -177,13 +177,13 @@ const resourcesMenuItems = [
                         {{ item.description }}
                       </p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
                 <div class="mt-4 pt-4 border-t border-dark-200/50">
                   <router-link
                     to="/services"
                     class="group inline-flex items-center gap-2 text-sm font-bold text-primary-600 hover:text-primary-700 transition-colors"
-                    @click="closeMobileMenu">
+                    @click="closeDropdown(); closeMobileMenu();">
                     View all services
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -222,12 +222,12 @@ const resourcesMenuItems = [
                 v-if="activeDropdown === 'resources'"
                 class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[480px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-dark-200/50 p-6 z-50">
                 <div class="grid grid-cols-2 gap-3">
-                  <a
+                  <router-link
                     v-for="item in resourcesMenuItems"
                     :key="item.title"
-                    :href="item.link"
+                    :to="item.link"
                     class="group flex items-start gap-4 p-4 rounded-xl hover:bg-primary-50 transition-all duration-300 border border-transparent hover:border-primary-200"
-                    @click="closeMobileMenu">
+                    @click="closeDropdown(); closeMobileMenu();">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-primary-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <font-awesome-icon :icon="item.icon" class="text-white text-lg" />
                     </div>
@@ -239,7 +239,7 @@ const resourcesMenuItems = [
                         {{ item.description }}
                       </p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
               </div>
             </transition>
@@ -331,15 +331,15 @@ const resourcesMenuItems = [
               class="overflow-hidden transition-all duration-300"
               :class="activeDropdown === 'services-mobile' ? 'max-h-[600px]' : 'max-h-0'">
               <div class="pl-4 space-y-2">
-                <a
+                <router-link
                   v-for="item in servicesMenuItems"
                   :key="item.title"
-                  :href="item.link"
+                  :to="item.link"
                   class="flex items-center gap-3 px-4 py-2 text-sm text-dark-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all"
                   @click="closeMobileMenu">
                   <font-awesome-icon :icon="item.icon" class="w-4 h-4 text-primary-600" />
                   {{ item.title }}
-                </a>
+                </router-link>
               </div>
             </div>
           </div>
@@ -359,15 +359,15 @@ const resourcesMenuItems = [
               class="overflow-hidden transition-all duration-300"
               :class="activeDropdown === 'resources-mobile' ? 'max-h-[400px]' : 'max-h-0'">
               <div class="pl-4 space-y-2">
-                <a
+                <router-link
                   v-for="item in resourcesMenuItems"
                   :key="item.title"
-                  :href="item.link"
+                  :to="item.link"
                   class="flex items-center gap-3 px-4 py-2 text-sm text-dark-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all"
                   @click="closeMobileMenu">
                   <font-awesome-icon :icon="item.icon" class="w-4 h-4 text-teal-600" />
                   {{ item.title }}
-                </a>
+                </router-link>
               </div>
             </div>
           </div>
